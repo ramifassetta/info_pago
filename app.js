@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(morgan('dev')); // Configura morgan en modo 'dev'
+app.use(morgan('dev'));
 
 // Rutas
 app.use('/api/payments', paymentRoutes);
