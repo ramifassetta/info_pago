@@ -16,14 +16,15 @@ const webhook = async (req, res) => {
     console.log("paymentId recibido en el webhook: ", paymentId);
 
     try {
+      console.log("paymentid ",paymentId)
       const paymentInfo = await getPaymentDetails(paymentId);
       const email = paymentInfo.payer.email;
       console.log("email: ", email);
 
       res.sendStatus(200);
     } catch (error) {
-      console.error('Error al obtener los datos del pago:', error);
-      res.sendStatus(500);
+      console.log('Error al obtener los datos del pago:', error);
+      res.sendStatus(400);
     }
   } else {
     res.status(500);

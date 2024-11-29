@@ -13,6 +13,6 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // Rutas
-app.use('/api/payments', paymentRoutes);
+app.use('/', paymentRoutes);
 
 module.exports = app;
